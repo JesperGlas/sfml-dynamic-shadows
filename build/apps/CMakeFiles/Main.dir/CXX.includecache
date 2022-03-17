@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jesper/dev/cpp/sfml-dynamic-shadows/main.cpp
+/home/jesper/dev/cpp/sfml-dynamic-shadows/apps/main.cpp
 iostream
 -
 

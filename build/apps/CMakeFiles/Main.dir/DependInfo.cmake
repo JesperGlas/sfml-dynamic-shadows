@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jesper/dev/cpp/sfml-dynamic-shadows/main.cpp" "/home/jesper/dev/cpp/sfml-dynamic-shadows/build/CMakeFiles/Main.dir/main.cpp.o"
+  "/home/jesper/dev/cpp/sfml-dynamic-shadows/apps/main.cpp" "/home/jesper/dev/cpp/sfml-dynamic-shadows/build/apps/CMakeFiles/Main.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,3 +1,7 @@
 /home/jesper/dev/cpp/sfml-dynamic-shadows/build/CMakeFiles/rebuild_cache.dir
 /home/jesper/dev/cpp/sfml-dynamic-shadows/build/CMakeFiles/edit_cache.dir
-/home/jesper/dev/cpp/sfml-dynamic-shadows/build/CMakeFiles/Main.dir
+/home/jesper/dev/cpp/sfml-dynamic-shadows/build/src/CMakeFiles/rebuild_cache.dir
+/home/jesper/dev/cpp/sfml-dynamic-shadows/build/src/CMakeFiles/edit_cache.dir
+/home/jesper/dev/cpp/sfml-dynamic-shadows/build/apps/CMakeFiles/rebuild_cache.dir
+/home/jesper/dev/cpp/sfml-dynamic-shadows/build/apps/CMakeFiles/edit_cache.dir
+/home/jesper/dev/cpp/sfml-dynamic-shadows/build/apps/CMakeFiles/Main.dir
