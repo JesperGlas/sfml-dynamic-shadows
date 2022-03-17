@@ -1,0 +1,1 @@
+add_library(Demo demo.cpp demo.hpp)

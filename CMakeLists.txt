@@ -1,23 +1,23 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(
-    DynamicShadows
+    sfml-dynamic_shadows
     VERSION 1.0.0
     )
 
-# Compiled source code
-add_subdirectory(src)
+aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}/src" PROJECT_SRCS)
 
-# Executable
-add_subdirectory(apps)
+# Add project include directories
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-configure_file(
-    "${PROJECT_SOURCE_DIR}/include/version_config.h.in"
-    "${PROJECT_BINARY_DIR}/include/version_config.h"
-)
+# Define variable for linked libraries
+set(PROJECT_LIBRARIES)
 
-target_include_directories(
-    Main PUBLIC
-    "${PROJECT_SOURCE_DIR}/include/"
-    "${PROJECT_BINARY_DIR}/include/"
-)
+# Create build files for application
+add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
+
+# Link against libraries
+target_link_libraries(${PROJECT_NAME} glfw ${PROJECT_LIBRARIES} ${GLFW_LIBRARIES})
+
+# Install application
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)

@@ -56,6 +56,52 @@ CMAKE_BINARY_DIR = /home/jesper/dev/cpp/sfml-dynamic-shadows/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -111,17 +157,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Main
+# Target rules for targets named sfml-dynamic_shadows
 
 # Build rule for target.
-Main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Main
-.PHONY : Main
+sfml-dynamic_shadows: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sfml-dynamic_shadows
+.PHONY : sfml-dynamic_shadows
 
 # fast build rule for target.
-Main/fast:
-	$(MAKE) -f apps/CMakeFiles/Main.dir/build.make apps/CMakeFiles/Main.dir/build
-.PHONY : Main/fast
+sfml-dynamic_shadows/fast:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/build
+.PHONY : sfml-dynamic_shadows/fast
+
+src/demo.o: src/demo.cpp.o
+
+.PHONY : src/demo.o
+
+# target to build an object file
+src/demo.cpp.o:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/demo.cpp.o
+.PHONY : src/demo.cpp.o
+
+src/demo.i: src/demo.cpp.i
+
+.PHONY : src/demo.i
+
+# target to preprocess a source file
+src/demo.cpp.i:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/demo.cpp.i
+.PHONY : src/demo.cpp.i
+
+src/demo.s: src/demo.cpp.s
+
+.PHONY : src/demo.s
+
+# target to generate assembly for a file
+src/demo.cpp.s:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/demo.cpp.s
+.PHONY : src/demo.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/sfml-dynamic_shadows.dir/build.make CMakeFiles/sfml-dynamic_shadows.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -129,9 +229,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Main"
+	@echo "... sfml-dynamic_shadows"
+	@echo "... src/demo.o"
+	@echo "... src/demo.i"
+	@echo "... src/demo.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
