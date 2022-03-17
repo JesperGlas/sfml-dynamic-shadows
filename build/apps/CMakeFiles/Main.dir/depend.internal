@@ -3,3 +3,4 @@
 
 apps/CMakeFiles/Main.dir/main.cpp.o
  /home/jesper/dev/cpp/sfml-dynamic-shadows/apps/main.cpp
+ include/version_config.h
