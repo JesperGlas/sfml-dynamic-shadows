@@ -4,10 +4,10 @@
 
 int main()
 {
-    std::cout   << "Dynamic Shadows" << std::endl
-                << std::endl;
+    Demo demo;
 
-    init();
+    demo.init();
+    demo.run();
 
     return 0;
 }

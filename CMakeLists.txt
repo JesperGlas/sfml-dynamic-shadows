@@ -5,19 +5,24 @@ project(
     VERSION 1.0.0
     )
 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
+
+
 aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}/src" PROJECT_SRCS)
 
 # Add project include directories
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-# Define variable for linked libraries
-set(PROJECT_LIBRARIES)
+# Add SFML
+message(STATUS "Adding SFML dir")
+set (SFML_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/SFML-2.5.1")
+find_package(SFML 2.5.1 COMPONENTS system graphics REQUIRED)
 
 # Create build files for application
 add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
 
 # Link against libraries
-target_link_libraries(${PROJECT_NAME} glfw ${PROJECT_LIBRARIES} ${GLFW_LIBRARIES})
-
-# Install application
-install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+target_link_libraries(${PROJECT_NAME} 
+    sfml-system
+    sfml-graphics
+    )
